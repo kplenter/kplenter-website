@@ -1,0 +1,26 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import { type Lang, tArr, tStr } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const paragraphs = tArr(lang, "about.body");
+---
+
+<section id="about" class="relative py-24 md:py-32">
+  <div class="mx-auto flex max-w-4xl flex-col gap-10 px-6 md:px-8">
+    <SectionHeader
+      eyebrow={tStr(lang, "about.eyebrow")}
+      title={tStr(lang, "about.title")}
+    />
+
+    <div class="flex flex-col gap-6 text-base leading-relaxed text-fg/85 md:text-lg">
+      {paragraphs.map((p, i) => (
+        <p data-reveal style={`--reveal-delay: ${i * 100}ms`}>{p}</p>
+      ))}
+    </div>
+  </div>
+</section>

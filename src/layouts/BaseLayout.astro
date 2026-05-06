@@ -1,0 +1,103 @@
+---
+import "../styles/global.css";
+import Nav from "../components/layout/Nav.astro";
+import Footer from "../components/layout/Footer.astro";
+import { type Lang, tStr } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  pathDe: string;
+  pathEn: string;
+  showNav?: boolean;
+  showFooter?: boolean;
+}
+
+const {
+  lang,
+  title,
+  description,
+  pathDe,
+  pathEn,
+  showNav = true,
+  showFooter = true,
+} = Astro.props;
+
+const resolvedTitle = title ?? tStr(lang, "meta.title");
+const resolvedDescription = description ?? tStr(lang, "meta.description");
+
+const siteOrigin = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const canonical = `${siteOrigin}${lang === "de" ? pathDe : pathEn}`;
+const alternateDe = `${siteOrigin}${pathDe}`;
+const alternateEn = `${siteOrigin}${pathEn}`;
+const ogImage = `${siteOrigin}/og-image.jpg`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#1A2540" />
+
+    <title>{resolvedTitle}</title>
+    <meta name="description" content={resolvedDescription} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de" href={alternateDe} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateDe} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === "de" ? "de_DE" : "en_US"} />
+    <meta property="og:title" content={resolvedTitle} />
+    <meta property="og:description" content={resolvedDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedTitle} />
+    <meta name="twitter:description" content={resolvedDescription} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body class="min-h-screen antialiased">
+    {showNav && <Nav lang={lang} pathDe={pathDe} pathEn={pathEn} />}
+    <main id="main">
+      <slot />
+    </main>
+    {showFooter && <Footer lang={lang} />}
+
+    <script>
+      const init = () => {
+        const targets = document.querySelectorAll("[data-reveal]");
+        if (!targets.length) return;
+        if (
+          !("IntersectionObserver" in window) ||
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          targets.forEach((el) => el.setAttribute("data-revealed", ""));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.setAttribute("data-revealed", "");
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+        );
+        targets.forEach((el) => io.observe(el));
+      };
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+      } else {
+        init();
+      }
+    </script>
+  </body>
+</html>

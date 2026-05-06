@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Kevin Plenter — Full-Stack Developer",
+    "description": "Full-Stack Developer aus Deutschland. Verfügbar für Freelance-Projekte und Festanstellungen — vom Konzept über die Architektur bis zum produktiven Release."
+  },
+  "nav": {
+    "about": "Über mich",
+    "cv": "Werdegang",
+    "projects": "Projekte",
+    "skills": "Skills",
+    "contact": "Kontakt",
+    "languageSwitch": "EN",
+    "languageSwitchAria": "Switch language to English"
+  },
+  "hero": {
+    "eyebrow": "Full-Stack Developer",
+    "name": "Kevin Plenter",
+    "tagline": "Ich baue verlässliche, durchdachte digitale Produkte — vom ersten Sketch bis zum Deployment.",
+    "ctaPrimary": "Kontakt aufnehmen",
+    "ctaSecondary": "CV als PDF",
+    "socialAriaEmail": "E-Mail schreiben",
+    "socialAriaLinkedIn": "LinkedIn-Profil öffnen",
+    "socialAriaGitHub": "GitHub-Profil öffnen"
+  },
+  "about": {
+    "eyebrow": "Über mich",
+    "title": "Wer ich bin & wie ich arbeite",
+    "body": [
+      "Ich bin Kevin — Full-Stack Developer mit dem Anspruch, technisch saubere Software zu bauen, die im Alltag tatsächlich besteht. Mich interessieren nicht nur Features, sondern Architekturen, die mit dem Produkt mitwachsen.",
+      "Ob Freelance-Projekt, Festanstellung oder ein bestehendes Team, das punktuell Verstärkung braucht: Ich passe mich an und liefere — pragmatisch, dokumentiert, wartbar.",
+      "Wenn du jemanden suchst, der Verantwortung übernimmt und mitdenkt statt nur abarbeitet, lass uns reden — ob als Partner für ein konkretes Projekt oder als Teammitglied auf längere Sicht."
+    ]
+  },
+  "cv": {
+    "eyebrow": "Werdegang",
+    "title": "Stationen",
+    "current": "heute",
+    "stackLabel": "Stack"
+  },
+  "projects": {
+    "eyebrow": "Projekte",
+    "title": "Auswahl umgesetzter Projekte",
+    "subtitle": "Aus Vertraulichkeitsgründen sind Kundennamen anonymisiert. Bei Interesse erzähle ich gerne mehr im persönlichen Gespräch.",
+    "industryLabel": "Branche",
+    "yearLabel": "Jahr"
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Tools, mit denen ich arbeite",
+    "subtitle": "Eine Auswahl der Technologien, die ich in produktiven Projekten einsetze."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Lass uns reden",
+    "body": "Schreib mir kurz, worum es geht — ich melde mich in der Regel innerhalb eines Werktages zurück.",
+    "cta": "E-Mail schreiben"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "imprint": "Impressum",
+    "imprintHref": "/impressum",
+    "privacy": "Datenschutz",
+    "privacyHref": "/datenschutz"
+  }
+}

@@ -1,0 +1,91 @@
+---
+import Tag from "./Tag.astro";
+import { type Lang, tStr } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  company: string;
+  role: string;
+  location?: string;
+  start: string;
+  end?: string;
+  summary: string;
+  stack: string[];
+  side: "left" | "right";
+  index: number;
+}
+
+const {
+  lang,
+  company,
+  role,
+  location,
+  start,
+  end,
+  summary,
+  stack,
+  side,
+  index,
+} = Astro.props;
+
+const formatMonth = (value: string) => {
+  const [year, month] = value.split("-");
+  if (!month) return year;
+  const date = new Date(Number(year), Number(month) - 1, 1);
+  return date.toLocaleDateString(lang === "de" ? "de-DE" : "en-US", {
+    month: "short",
+    year: "numeric",
+  });
+};
+
+const range = `${formatMonth(start)} – ${
+  end ? formatMonth(end) : tStr(lang, "cv.current")
+}`;
+const delay = index * 80;
+
+const cardColumn =
+  side === "left" ? "md:col-start-1" : "md:col-start-3";
+const cardAlign =
+  side === "left" ? "md:text-right md:items-end" : "md:text-left md:items-start";
+const stackAlign =
+  side === "left" ? "md:justify-end" : "md:justify-start";
+---
+
+<li class="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-8">
+  <div class={`flex flex-col ${cardColumn} ${cardAlign} pl-10 md:pl-0`}>
+    <article
+      class="group relative w-full rounded-xl border border-secondary/15 bg-primary-soft/40 p-6 transition-colors hover:border-secondary/40"
+      data-reveal
+      style={`--reveal-delay: ${delay}ms`}
+    >
+      <p class="text-xs font-medium uppercase tracking-[0.18em] text-secondary">
+        {range}
+      </p>
+      <h3 class="mt-2 font-display text-xl leading-tight md:text-2xl">
+        {role}
+      </h3>
+      <p class="mt-1 text-sm text-fg/80">
+        {company}{location ? ` · ${location}` : ""}
+      </p>
+      <p class="mt-4 text-sm leading-relaxed text-fg/75 md:text-base">
+        {summary}
+      </p>
+      {stack.length > 0 && (
+        <ul class={`mt-5 flex flex-wrap gap-2 ${stackAlign}`}>
+          {stack.map((item) => (
+            <li>
+              <Tag>{item}</Tag>
+            </li>
+          ))}
+        </ul>
+      )}
+    </article>
+  </div>
+
+  <div class="absolute left-2.75 top-2 md:col-start-2 md:flex md:items-start md:justify-center md:-left-1.5">
+    <span
+      class="block size-3 rounded-full bg-secondary shadow-[0_0_0_4px_rgba(200,169,110,0.15)]"
+      aria-hidden="true"
+    ></span>
+  </div>
+</li>

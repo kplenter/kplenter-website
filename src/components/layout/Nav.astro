@@ -1,0 +1,87 @@
+---
+import { type Lang, tStr } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  pathDe: string;
+  pathEn: string;
+}
+
+const { lang, pathDe, pathEn } = Astro.props;
+const altHref = lang === "de" ? pathEn : pathDe;
+const homeHref = lang === "de" ? "/" : "/en/";
+
+const links = [
+  { key: "about", anchor: "#about" },
+  { key: "cv", anchor: "#cv" },
+  { key: "projects", anchor: "#projects" },
+  { key: "skills", anchor: "#skills" },
+  { key: "contact", anchor: "#contact" },
+] as const;
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 transition-colors"
+  data-nav
+>
+  <div
+    class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8"
+  >
+    <a
+      href={homeHref}
+      class="font-display text-lg tracking-tight text-fg transition-colors hover:text-secondary"
+      aria-label="Kevin Plenter — Home"
+    >
+      Kevin Plenter
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
+      {links.map(({ key, anchor }) => (
+        <a
+          href={anchor}
+          class="text-sm tracking-wide text-fg/80 transition-colors hover:text-secondary"
+        >
+          {tStr(lang, `nav.${key}`)}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href={altHref}
+      class="rounded-full border border-secondary/40 px-3 py-1.5 text-xs font-medium tracking-widest text-secondary transition-colors hover:border-secondary hover:bg-secondary hover:text-primary"
+      aria-label={tStr(lang, "nav.languageSwitchAria")}
+      hreflang={lang === "de" ? "en" : "de"}
+    >
+      {tStr(lang, "nav.languageSwitch")}
+    </a>
+  </div>
+</header>
+
+<style>
+  [data-nav] {
+    backdrop-filter: blur(0px);
+    background: linear-gradient(
+      to bottom,
+      rgba(19, 27, 48, 0.6) 0%,
+      rgba(19, 27, 48, 0) 100%
+    );
+    border-color: rgba(200, 169, 110, 0.12);
+  }
+  [data-nav][data-scrolled] {
+    backdrop-filter: blur(12px);
+    background: rgba(19, 27, 48, 0.8);
+    border-bottom-width: 1px;
+  }
+</style>
+
+<script>
+  const nav = document.querySelector("[data-nav]");
+  if (nav) {
+    const update = () => {
+      if (window.scrollY > 24) nav.setAttribute("data-scrolled", "");
+      else nav.removeAttribute("data-scrolled");
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+</script>

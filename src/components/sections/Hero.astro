@@ -1,0 +1,175 @@
+---
+import Button from "../ui/Button.astro";
+import SocialIcons from "../ui/SocialIcons.astro";
+import { type Lang, tStr } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const name = tStr(lang, "hero.name");
+---
+
+<section
+  id="top"
+  class="relative flex min-h-screen items-center overflow-hidden pt-28 pb-20"
+>
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    aria-hidden="true"
+  >
+    <div class="aurora-blob aurora-blob-gold"></div>
+    <div class="aurora-blob aurora-blob-navy"></div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(19,27,48,0.6)_85%)]"
+    ></div>
+  </div>
+
+  <div
+    class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 md:gap-10 md:px-8"
+  >
+    <span
+      class="text-xs font-medium uppercase tracking-[0.3em] text-secondary"
+      data-reveal
+    >
+      {tStr(lang, "hero.eyebrow")}
+    </span>
+
+    <div
+      class="hero-name-stack relative"
+      data-reveal
+      style="--reveal-delay: 80ms"
+    >
+      <span class="hero-name-outline" aria-hidden="true">{name}</span>
+      <h1 class="hero-name font-display">
+        {name}
+      </h1>
+    </div>
+
+    <p
+      class="max-w-2xl text-lg leading-relaxed text-fg/80 md:text-xl"
+      data-reveal
+      style="--reveal-delay: 160ms"
+    >
+      {tStr(lang, "hero.tagline")}
+    </p>
+
+    <div
+      class="mt-2 flex flex-wrap items-center gap-4"
+      data-reveal
+      style="--reveal-delay: 240ms"
+    >
+      <Button href="mailto:info@k-plenter.de" variant="primary">
+        {tStr(lang, "hero.ctaPrimary")}
+      </Button>
+      <Button href="/cv-kevin-plenter.pdf" variant="ghost" download>
+        {tStr(lang, "hero.ctaSecondary")}
+      </Button>
+    </div>
+
+    <div
+      class="mt-2"
+      data-reveal
+      style="--reveal-delay: 320ms"
+    >
+      <SocialIcons lang={lang} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-name-stack {
+    display: inline-grid;
+    width: fit-content;
+    isolation: isolate;
+  }
+
+  .hero-name,
+  .hero-name-outline {
+    grid-column: 1;
+    grid-row: 1;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(3rem, 11vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .hero-name {
+    position: relative;
+    z-index: 1;
+    color: var(--color-fg);
+  }
+
+  .hero-name-outline {
+    transform: translate(0.18em, 0.16em);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(200, 169, 110, 0.45);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .aurora-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(110px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+
+  .aurora-blob-gold {
+    top: -20%;
+    right: -15%;
+    width: 60vw;
+    height: 60vw;
+    max-width: 900px;
+    max-height: 900px;
+    background: radial-gradient(
+      circle at center,
+      rgba(200, 169, 110, 0.35),
+      rgba(200, 169, 110, 0) 65%
+    );
+    animation: aurora-drift-a 22s ease-in-out infinite alternate;
+  }
+
+  .aurora-blob-navy {
+    bottom: -25%;
+    left: -10%;
+    width: 70vw;
+    height: 70vw;
+    max-width: 1000px;
+    max-height: 1000px;
+    background: radial-gradient(
+      circle at center,
+      rgba(80, 110, 180, 0.28),
+      rgba(31, 44, 75, 0) 65%
+    );
+    animation: aurora-drift-b 28s ease-in-out infinite alternate;
+  }
+
+  @keyframes aurora-drift-a {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(-6%, 4%, 0) scale(1.12);
+    }
+  }
+
+  @keyframes aurora-drift-b {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(5%, -3%, 0) scale(1.08);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora-blob {
+      animation: none;
+    }
+  }
+</style>

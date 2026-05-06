@@ -1,0 +1,51 @@
+---
+import Tag from "./Tag.astro";
+import { type Lang, tStr } from "../../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  title: string;
+  industry: string;
+  summary: string;
+  stack: string[];
+  start: number;
+  end?: number;
+  index: number;
+}
+
+const { lang, title, industry, summary, stack, start, end, index } = Astro.props;
+const delay = index * 80;
+---
+
+<article
+  class="group flex h-full flex-col rounded-2xl border border-secondary/15 bg-primary-soft/40 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-secondary/45 hover:shadow-[0_8px_30px_rgba(200,169,110,0.08)]"
+  data-reveal
+  style={`--reveal-delay: ${delay}ms`}
+>
+  <header class="flex items-start justify-between gap-4">
+    <span class="text-[10px] font-medium uppercase tracking-[0.2em] text-secondary">
+      {tStr(lang, "projects.industryLabel")} · {industry}
+    </span>
+    <span class="text-[10px] font-medium uppercase tracking-[0.2em] text-fg/50">
+      {start}{end && ` - ${end}`}
+    </span>
+  </header>
+
+  <h3 class="mt-4 font-display text-xl leading-tight md:text-2xl">
+    {title}
+  </h3>
+
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-fg/75">
+    {summary}
+  </p>
+
+  {stack.length > 0 && (
+    <ul class="mt-5 flex flex-wrap gap-2">
+      {stack.map((item) => (
+        <li>
+          <Tag>{item}</Tag>
+        </li>
+      ))}
+    </ul>
+  )}
+</article>

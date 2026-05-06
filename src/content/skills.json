@@ -1,0 +1,96 @@
+[
+  {
+    "id": "main",
+    "categories": [
+      {
+        "key": "languages",
+        "label": { "de": "Sprachen", "en": "Languages" },
+        "items": [
+          "TypeScript",
+          "JavaScript",
+          "Java",
+          "C#",
+          "PHP",
+          "SQL",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "key": "frontend",
+        "label": { "de": "Frontend", "en": "Frontend" },
+        "items": [
+          "Next.js",
+          "React",
+          "Angular",
+          "Vue",
+          "Astro",
+          "Tailwind CSS",
+          "Vite"
+        ]
+      },
+      {
+        "key": "backend",
+        "label": { "de": "Backend", "en": "Backend" },
+        "items": [
+          "Node.js",
+          "Express.js",
+          "Nest.js",
+          "Symfony",
+          "Spring Boot",
+          ".NET Core",
+          "REST",
+          "GraphQL"
+        ]
+      },
+      {
+        "key": "data",
+        "label": { "de": "Datenbanken", "en": "Databases" },
+        "items": [
+          "PostgreSQL",
+          "MS SQL Server",
+          "Oracle",
+          "MariaDB",
+          "Elasticsearch",
+          "Entity Framework",
+          "Hibernate",
+          "Prisma",
+          "Drizzle"
+        ]
+      },
+      {
+        "key": "infra",
+        "label": {
+          "de": "Infrastruktur & Tools",
+          "en": "Infrastructure & Tooling"
+        },
+        "items": [
+          "Docker",
+          "Linux",
+          "GitHub Actions",
+          "GitLab CI",
+          "nginx",
+          "WebStorm",
+          "Jira",
+          "Confluence",
+          "Claude",
+          "Chat GPT"
+        ]
+      },
+      {
+        "key": "practices",
+        "label": { "de": "Arbeitsweise", "en": "Practices" },
+        "items": [
+          "Clean Code",
+          "Clean Architecture",
+          "Testing",
+          "CI/CD",
+          "Code-Review",
+          "Mentoring",
+          "Scrum",
+          "Kanban"
+        ]
+      }
+    ]
+  }
+]

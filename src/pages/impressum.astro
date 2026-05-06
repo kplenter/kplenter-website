@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const lang = "de" as const;
+const entries = await getCollection("legal", ({ id, data }) =>
+  data.lang === lang && id.startsWith("impressum"),
+);
+const entry = entries[0];
+if (!entry) {
+  throw new Error("Missing legal entry: impressum.de.md");
+}
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${entry.data.title} — Kevin Plenter`}
+  pathDe="/impressum"
+  pathEn="/en/imprint"
+>
+  <article class="mx-auto max-w-3xl px-6 pt-32 pb-24 md:px-8">
+    <h1 class="font-display text-4xl md:text-5xl">{entry.data.title}</h1>
+    <div class="legal-prose mt-10">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

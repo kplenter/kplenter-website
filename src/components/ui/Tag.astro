@@ -1,0 +1,19 @@
+---
+interface Props {
+  size?: "sm" | "md";
+  delay?: number;
+}
+
+const { size = "sm", delay = 0 } = Astro.props;
+const sizing =
+  size === "md" ? "px-4 py-1.5 text-sm" : "px-3 py-1 text-xs";
+const style = delay ? `--reveal-delay: ${delay}ms` : undefined;
+---
+
+<span
+  class={`inline-flex items-center rounded-full border border-secondary/30 bg-secondary/5 ${sizing} font-medium tracking-wide text-secondary transition-colors hover:border-secondary hover:bg-secondary/15`}
+  data-reveal
+  style={style}
+>
+  <slot />
+</span>

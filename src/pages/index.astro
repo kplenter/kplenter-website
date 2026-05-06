@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import CvTimeline from "../components/sections/CvTimeline.astro";
+import Projects from "../components/sections/Projects.astro";
+import Skills from "../components/sections/Skills.astro";
+import Contact from "../components/sections/Contact.astro";
+
+const lang = "de" as const;
+---
+
+<BaseLayout lang={lang} pathDe="/" pathEn="/en/">
+  <Hero lang={lang} />
+  <About lang={lang} />
+  <CvTimeline lang={lang} />
+  <Projects lang={lang} />
+  <Skills lang={lang} />
+  <Contact lang={lang} />
+</BaseLayout>

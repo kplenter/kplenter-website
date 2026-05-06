@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Kevin Plenter — Full-Stack Developer",
+    "description": "Full-stack developer based in Germany. Available for freelance projects and full-time roles — from concept and architecture to production release."
+  },
+  "nav": {
+    "about": "About",
+    "cv": "Career",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "languageSwitch": "DE",
+    "languageSwitchAria": "Sprache auf Deutsch umschalten"
+  },
+  "hero": {
+    "eyebrow": "Full-Stack Developer",
+    "name": "Kevin Plenter",
+    "tagline": "I build reliable, well-considered digital products — from the first sketch to production deployment.",
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "Download CV",
+    "socialAriaEmail": "Send an email",
+    "socialAriaLinkedIn": "Open LinkedIn profile",
+    "socialAriaGitHub": "Open GitHub profile"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Who I am & how I work",
+    "body": [
+      "I'm Kevin — a full-stack developer who aims to build technically clean software that actually holds up in production. I care about features, but I care more about architectures that grow with the product.",
+      "Whether it's a freelance engagement, a full-time role, or an existing team looking for focused reinforcement: I adapt and deliver — pragmatic, documented, maintainable.",
+      "If you're looking for someone who takes ownership and thinks along instead of just executing tickets, let's talk — as a partner for a specific project or as a team member for the long run."
+    ]
+  },
+  "cv": {
+    "eyebrow": "Career",
+    "title": "Stations",
+    "current": "today",
+    "stackLabel": "Stack"
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Selected client work",
+    "subtitle": "Client names are anonymised for confidentiality reasons. Happy to share more in a personal conversation.",
+    "industryLabel": "Industry",
+    "yearLabel": "Year"
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Tools I work with",
+    "subtitle": "A selection of the technologies I use in production projects."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "body": "Drop me a short note about what you have in mind — I usually respond within one business day.",
+    "cta": "Send an email"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "imprint": "Imprint",
+    "imprintHref": "/en/imprint",
+    "privacy": "Privacy",
+    "privacyHref": "/en/privacy"
+  }
+}
