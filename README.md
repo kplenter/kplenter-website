@@ -1,43 +1,118 @@
-# Astro Starter Kit: Minimal
+# k-plenter.de
+
+Personal website of Kevin Plenter — a bilingual (DE/EN) one-page landing site / interactive CV. Refined, restrained dark-mode aesthetic (navy + gold, Playfair Display + DM Sans), statically generated with Astro 6.
+
+Live: <https://k-plenter.de>
+
+## Stack
+
+- **Astro 6** — static site generator with built-in i18n and content collections.
+- **Tailwind CSS v4** via `@tailwindcss/vite` — no separate Astro integration needed.
+- **@fontsource/playfair-display** + **@fontsource/dm-sans** — self-hosted fonts (GDPR-friendly, no Google Fonts CDN).
+- **@astrojs/sitemap** — automatic sitemap generation.
+- No animation or UI library — fade-ins via Intersection Observer + CSS, everything hand-rolled.
+
+## Commands
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install        # Install dependencies
+pnpm dev            # Dev server on localhost:4321
+pnpm build          # Static build into ./dist/
+pnpm preview        # Preview the build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Requires Node ≥ 22.12 (see `engines` in [package.json](package.json)).
 
-## 🚀 Project Structure
+## Routing & i18n
 
-Inside of your Astro project, you'll see the following folders and files:
+Astro's built-in i18n with `prefixDefaultLocale: false`:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+- `/` → German (default)
+- `/en/` → English
+- `/impressum`, `/datenschutz` — DE legal pages
+- `/en/imprint`, `/en/privacy` — EN legal pages
+
+UI strings live in [src/i18n/de.json](src/i18n/de.json) and [src/i18n/en.json](src/i18n/en.json), read via the helper in [src/i18n/ui.ts](src/i18n/ui.ts).
+
+## Content collections
+
+All editorial content is maintained in [src/content/](src/content/) — no code changes are needed to update content.
+
+| Collection | Path | Format | Description |
+|---|---|---|---|
+| `cv` | [src/content/cv/](src/content/cv/) | Markdown | CV stations, one file per station per language (e.g. `eq_3.de.md` / `eq_3.en.md`). |
+| `projects` | [src/content/projects/](src/content/projects/) | Markdown | Anonymised projects, one file per project per language. |
+| `skills` | [src/content/skills.json](src/content/skills.json) | JSON | Categorised tech skills (language-neutral, with DE/EN category labels). |
+| `legal` | [src/content/legal/](src/content/legal/) | Markdown | Imprint + privacy policy, in DE and EN. |
+
+Schemas are defined in [src/content.config.ts](src/content.config.ts). Language filtering happens via the `lang` frontmatter field.
+
+### Editing content
+
+- **Add a CV station:** create two files (`<slug>.de.md`, `<slug>.en.md`) in `src/content/cv/`. Required frontmatter: `lang`, `company`, `role`, `start`, `summary`, `order`. Higher `order` = newer (top of the timeline).
+- **Add a project:** create two files in `src/content/projects/`. Required frontmatter: `lang`, `title`, `industry`, `summary`, `start`, `order`.
+- **Add a skill:** add the item to the matching category in `skills.json`.
+- **Legal text:** edit the four Markdown files under `src/content/legal/` directly.
+
+## Directory layout
+
+```
+src/
+├── components/
+│   ├── layout/        # Nav, Footer
+│   ├── sections/      # Hero, About, CvTimeline, Projects, Skills, Contact
+│   └── ui/            # Button, Tag, ProjectCard, TimelineEntry, SocialIcons, ...
+├── content/           # Content collections (see above)
+├── i18n/              # de.json, en.json, ui.ts
+├── layouts/
+│   └── BaseLayout.astro   # HTML shell, meta/OG, reveal observer
+├── pages/
+│   ├── index.astro                # / (DE)
+│   ├── impressum.astro
+│   ├── datenschutz.astro
+│   └── en/
+│       ├── index.astro            # /en/
+│       ├── imprint.astro
+│       └── privacy.astro
+└── styles/
+    └── global.css     # Tailwind import, theme tokens, reveal animation, legal-prose
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Design system
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Theme tokens are defined in [src/styles/global.css](src/styles/global.css) as CSS variables and exposed to Tailwind via `@theme`:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```css
+--color-primary:      #1a2540;   /* background */
+--color-primary-soft: #1f2c4b;
+--color-primary-deep: #131b30;
+--color-secondary:    #c8a96e;   /* accent (gold) */
+--color-fg:           #e8e6e1;
+--color-muted:        #8a8d96;
+--font-display:       "Playfair Display";
+--font-body:          "DM Sans";
+```
 
-## 🧞 Commands
+The hero uses a typographic layout (layered name with a gold outline echo) on a subtle aurora gradient background — no hero photo.
 
-All commands are run from the root of the project, from a terminal:
+## Animations
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Reveal-on-scroll via Intersection Observer (see the inline script in [BaseLayout.astro](src/layouts/BaseLayout.astro)). Components opt in by setting `data-reveal`; add `style="--reveal-delay: 200ms"` for staggered entries. `prefers-reduced-motion` is respected (animations turn off entirely).
 
-## 👀 Want to learn more?
+## SEO
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+`BaseLayout` automatically emits:
+
+- `<html lang>` matching the active language
+- canonical link plus `hreflang` (de, en, x-default)
+- OpenGraph + Twitter Card meta tags (OG image from `/public/og-image.jpg` — TODO)
+- Sitemap generated automatically via `@astrojs/sitemap`
+
+## Deployment
+
+Static hosting on a self-managed server. `pnpm build` produces `./dist/` (including `sitemap-index.xml`), ready to be deployed as-is.
+
+## Open items
+
+- `public/cv-kevin-plenter.pdf` — CV download asset
+- `public/og-image.jpg` (1200×630) — OG image for social previews
