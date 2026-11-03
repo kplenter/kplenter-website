@@ -21,7 +21,7 @@ pnpm build          # Static build into ./dist/
 pnpm preview        # Preview the build locally
 ```
 
-Requires Node ≥ 22.12 (see `engines` in [package.json](package.json)).
+Requires Node 24 LTS (see [.nvmrc](.nvmrc) and `engines` in [package.json](package.json)).
 
 ## Routing & i18n
 
