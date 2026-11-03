@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      time: "18:00"
+      timezone: "Europe/Berlin"
+    cooldown:
+      default-days: 3
     groups:
       dependencies:
         patterns:
@@ -13,3 +17,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      time: "18:00"
+      timezone: "Europe/Berlin"
