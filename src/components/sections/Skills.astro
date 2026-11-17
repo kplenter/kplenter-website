@@ -35,7 +35,7 @@ const categories = skills?.data.categories ?? [];
           <ul class="mt-4 flex flex-wrap gap-2">
             {category.items.map((item, ii) => (
               <li>
-                <Tag delay={ii * 30}>{item}</Tag>
+                <Tag delay={ii * 30}>{typeof item === "string" ? item : item[lang]}</Tag>
               </li>
             ))}
           </ul>

@@ -42,7 +42,9 @@ const skills = defineCollection({
           de: z.string(),
           en: z.string(),
         }),
-        items: z.array(z.string()),
+        items: z.array(
+          z.union([z.string(), z.object({ de: z.string(), en: z.string() })]),
+        ),
       }),
     ),
   }),

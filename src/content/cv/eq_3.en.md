@@ -5,7 +5,7 @@ role: Web Developer
 location: Germany
 start: "2021-10"
 end: "2023-05"
-summary: Development and maintenance of the HR software Timemaster with a focus on scalability and code quality – responsible for frontend architecture, state management, and performance, as well as a full codebase migration from AngularJS to Angular including TypeScript and a modern build pipeline. Additionally designed and developed API endpoints for system integration and co-owned the cross-platform mobile app.
+summary: Development of the HR software Timemaster (web and mobile app) with a focus on scalability and code quality – including a big-bang migration of the entire codebase from AngularJS to Angular, introducing TypeScript and a modern build pipeline. Shaped the frontend architecture (component structure, state management, performance) and designed and documented API endpoints.
 stack: ["TypeScript", "Angular", "Flutter", "CSS", "C#", ".NET Core", "PostgreSQL", "MS SQL Server", "Azure DevOps"]
 order: 20
 ---
