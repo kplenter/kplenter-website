@@ -1,8 +1,8 @@
 ---
 lang: de
-title: Plattform zur automatischen Erstellung von Gefährdungsbeurteilungen
+title: Plattform für Gefährdungsbeurteilungen
 industry: Arbeitssicherheit
-summary: Konzeption, Entwicklung und Wartung einer Plattform zur rechtssicheren Erstellung von Gefährdungsbeurteilungen nach ArbSchG – mit baustein-basierter Inhaltspflege, automatisierter Generierung vollständiger Beurteilungen, automatischem Berichtsversand sowie Compliance-Automatisierung für wiederkehrende Prüffristen.
+summary: Plattform zur rechtssicheren Erstellung von Gefährdungsbeurteilungen nach ArbSchG. Ein Bausteinsystem erzeugt vollständige Beurteilungen automatisch aus wiederverwendbaren Inhalten – mit deutlicher Zeit- und Kostenersparnis. Prüfberichte und Erinnerungen an gesetzliche Wiederholungsfristen werden automatisch versendet.
 stack: ["Symfony", "PHP", "JavaScript", "CSS", "Bootstrap", "Twig", "MariaDB"]
 start: 2018
 end: 2020

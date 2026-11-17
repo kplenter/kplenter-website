@@ -4,7 +4,8 @@ company: journaway GmbH
 role: Team Lead Frontend
 location: Deutschland
 start: "2023-06"
-summary: Fachliche und disziplinarische Leitung eines 5-köpfigen Frontend-Teams mit Verantwortung für Systemarchitektur, technische Roadmap und Projektdelivery – u. a. Neuentwicklung der journaway-Website (Next.js/Contentful), Aufbau einer performanten Suchengine (Express.js/Elasticsearch) sowie Einführung von AI-First-Praktiken und Management von Drittanbieter-Integrationen.
-stack: [ "TypeScript", "Next.js", "React", "Tailwind", "CSS", "Node.js", "Express.js", "Nest.js", "Contentful", "PostgreSQL", "Redis", "MongoDB", "Docker", "GitHub Actions" ]
+end: "2026-06"
+summary: Fachliche und disziplinarische Leitung des Frontend-Teams (4 Entwickler + 1 UI/UX-Designer) inkl. 1:1s, Performance-Reviews und Entwicklungsplänen sowie Aufbau des Teams durch End-to-End-Recruiting – von Sourcing über technische Interviews bis zum Onboarding. Verantwortung für Frontend-Architektur und Roadmap, Neuentwicklung der Website mit Next.js und Contentful sowie einer hochperformanten Suche mit Express.js und Elasticsearch. Darüber hinaus Projektleitung für Website und internes Tooling inkl. Prozessautomatisierung und Vendor Management.
+stack: [ "TypeScript", "Next.js", "React", "Tailwind", "CSS", "Node.js", "Express.js", "Nest.js", "Contentful", "Elasticsearch", "PostgreSQL", "Redis", "MongoDB", "Docker", "GitHub Actions" ]
 order: 40
 ---

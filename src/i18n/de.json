@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Kevin Plenter — Full-Stack Developer",
-    "description": "Full-Stack Developer aus Deutschland. Verfügbar für Freelance-Projekte und Festanstellungen — vom Konzept über die Architektur bis zum produktiven Release."
+    "title": "Kevin Plenter — Head of Engineering",
+    "description": "Head of Engineering mit Full-Stack-Hintergrund aus Deutschland. Verfügbar für Freelance-Projekte und Festanstellungen — vom Konzept über die Architektur bis zum produktiven Release."
   },
   "nav": {
     "about": "Über mich",
@@ -13,9 +13,9 @@
     "languageSwitchAria": "Switch language to English"
   },
   "hero": {
-    "eyebrow": "Full-Stack Developer",
+    "eyebrow": "Head of Engineering",
     "name": "Kevin Plenter",
-    "tagline": "Ich baue verlässliche, durchdachte digitale Produkte — vom ersten Sketch bis zum Deployment.",
+    "tagline": "Ich führe Engineering-Teams und baue verlässliche digitale Produkte — von der Strategie bis zum Deployment.",
     "ctaPrimary": "Kontakt aufnehmen",
     "ctaSecondary": "CV als PDF",
     "socialAriaEmail": "E-Mail schreiben",
@@ -26,9 +26,9 @@
     "eyebrow": "Über mich",
     "title": "Wer ich bin & wie ich arbeite",
     "body": [
-      "Ich bin Kevin — Full-Stack Developer mit dem Anspruch, technisch saubere Software zu bauen, die im Alltag tatsächlich besteht. Mich interessieren nicht nur Features, sondern Architekturen, die mit dem Produkt mitwachsen.",
-      "Ob Freelance-Projekt, Festanstellung oder ein bestehendes Team, das punktuell Verstärkung braucht: Ich passe mich an und liefere — pragmatisch, dokumentiert, wartbar.",
-      "Wenn du jemanden suchst, der Verantwortung übernimmt und mitdenkt statt nur abarbeitet, lass uns reden — ob als Partner für ein konkretes Projekt oder als Teammitglied auf längere Sicht."
+      "Ich bin Kevin — Head of Engineering bei journaway mit über 10 Jahren Erfahrung in der Softwareentwicklung. Ich verantworte drei crossfunktionale Teams mit 19 Mitarbeitenden und gestalte als Teil des Extended Leadership Teams die Engineering-Strategie, die Organisation und den Einsatz von AI im Unternehmen.",
+      "Davor habe ich als Team Lead das Frontend-Team aufgebaut. Mein Hintergrund als Fullstack-Entwickler hilft mir, technische Qualität, Produktziele und die Entwicklung von Menschen zusammenzubringen — und ich bleibe bewusst hands-on.",
+      "Ob Freelance-Projekt, Festanstellung oder ein Team, das Verstärkung in Technik oder Führung braucht: Wenn du jemanden suchst, der Verantwortung übernimmt und mitdenkt statt nur abarbeitet, lass uns reden."
     ]
   },
   "cv": {

@@ -1,11 +1,11 @@
 ---
 lang: de
-company: Johannesburg GmbH
-role: Fullstack Developer
+company: Johannesburg gGmbH
+role: Fullstack Developer (alleiniger Entwickler)
 location: Deutschland
 start: "2016-11"
 end: "2019-12"
-summary: Als alleiniger Entwickler eigenverantwortlich für den Aufbau und Betrieb der gesamten Software-Landschaft einer gGmbH im Jugendhilfesektor – von der strategischen Konzeption über Architektur und Entwicklung bis zum produktiven Betrieb mehrerer geschäftskritischer Web-Applikationen. Eigenständig konzipiert und umgesetzt wurden u. a. Lösungen für Fuhrparkverwaltung, Energiekosten-Management, Immobilien- und HR-Abrechnung, IT-Inventarisierung sowie ein umfassendes Schulverwaltungssystem. Darüber hinaus Verantwortung für Hosting, Vendor Management sowie technische Beratung der QM-Abteilung zur DSGVO-konformen Umsetzung im sensiblen Kontext der Jugendhilfe.
+summary: Aufbau und Betrieb der gesamten internen Software-Landschaft eines Jugendhilfeträgers – von der Konzeption bis zum Hosting. Entwicklung mehrerer geschäftskritischer Web-Applikationen, u. a. für Fuhrpark-, Energiekosten-, Inventar- und Schulverwaltung, sowie technische Beratung der QM-Abteilung bei der DSGVO-Umsetzung.
 stack: [ "Symfony", "PHP", "Vue", "CSS", "SASS", "Express.js", "Java", "MS SQL Server", "MariaDB", "OpenSUSE", "VMware vSphere" ]
 order: 9
 ---

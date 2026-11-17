@@ -1,11 +1,11 @@
 ---
 lang: de
 company: Lufthansa Industry Solutions TS GmbH
-role: IT-Consultant , Fullstack Developer
+role: IT-Consultant, Fullstack Developer
 location: Deutschland
 start: "2020-01"
 end: "2021-09"
-summary: Einsatz als IT-Berater und Fullstack Developer in diversen Kundenprojekten – u. a. Entwicklung einer WLTP-Berechnungsplattform für einen großen deutschen Automobilhersteller mit Verantwortung für Frontend-Architekturentscheidungen im Team sowie Fullstack-Entwicklung mit React und Java Spring, ergänzt durch technische Beratung und Projektierung neuer Web- & Mobile-Projekte.
+summary: Fullstack-Entwicklung (React, Java Spring) einer WLTP-Berechnungsplattform für einen deutschen Automobilhersteller mit hohen regulatorischen Anforderungen – mit Verantwortung für Frontend-Architekturentscheidungen in einem 9–10-köpfigen Projektteam. Darüber hinaus Anforderungsanalyse, Aufwandsschätzung und technische Beratung in neuen und bestehenden Kundenprojekten.
 stack: [ "TypeScript", "React", "CSS", "SASS", "Java", "JUnit", "Spring", "MariaDB", "Oracle", "Docker", "GitLab CI" ]
 order: 10
 ---

@@ -3,8 +3,48 @@
     "id": "main",
     "categories": [
       {
+        "key": "leadership",
+        "label": {
+          "de": "Leadership",
+          "en": "Leadership"
+        },
+        "items": [
+          {
+            "de": "Führung von Leads",
+            "en": "Leading leads"
+          },
+          {
+            "de": "Organisationsentwicklung",
+            "en": "Organisational development"
+          },
+          {
+            "de": "Recruiting",
+            "en": "Recruiting"
+          },
+          {
+            "de": "Headcount-Planung",
+            "en": "Headcount planning"
+          },
+          {
+            "de": "Budgetverantwortung",
+            "en": "Budget ownership"
+          },
+          {
+            "de": "AI-Strategie",
+            "en": "AI strategy"
+          },
+          {
+            "de": "Stakeholder-Management",
+            "en": "Stakeholder management"
+          }
+        ]
+      },
+      {
         "key": "languages",
-        "label": { "de": "Sprachen", "en": "Languages" },
+        "label": {
+          "de": "Sprachen",
+          "en": "Languages"
+        },
         "items": [
           "TypeScript",
           "JavaScript",
@@ -18,7 +58,10 @@
       },
       {
         "key": "frontend",
-        "label": { "de": "Frontend", "en": "Frontend" },
+        "label": {
+          "de": "Frontend",
+          "en": "Frontend"
+        },
         "items": [
           "Next.js",
           "React",
@@ -31,7 +74,10 @@
       },
       {
         "key": "backend",
-        "label": { "de": "Backend", "en": "Backend" },
+        "label": {
+          "de": "Backend",
+          "en": "Backend"
+        },
         "items": [
           "Node.js",
           "Express.js",
@@ -45,12 +91,17 @@
       },
       {
         "key": "data",
-        "label": { "de": "Datenbanken", "en": "Databases" },
+        "label": {
+          "de": "Datenbanken",
+          "en": "Databases"
+        },
         "items": [
           "PostgreSQL",
           "MS SQL Server",
           "Oracle",
           "MariaDB",
+          "Redis",
+          "MongoDB",
           "Elasticsearch",
           "Entity Framework",
           "Hibernate",
@@ -67,19 +118,28 @@
         "items": [
           "Docker",
           "Linux",
+          "Azure",
+          "Google Cloud (GCP)",
           "GitHub Actions",
           "GitLab CI",
           "nginx",
           "WebStorm",
+          "PhpStorm",
+          "Rider",
+          "VS Code",
+          "Figma",
           "Jira",
           "Confluence",
           "Claude",
-          "Chat GPT"
+          "ChatGPT"
         ]
       },
       {
         "key": "practices",
-        "label": { "de": "Arbeitsweise", "en": "Practices" },
+        "label": {
+          "de": "Arbeitsweise",
+          "en": "Practices"
+        },
         "items": [
           "Clean Code",
           "Clean Architecture",
